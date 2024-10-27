@@ -25,7 +25,7 @@ dist/
 .vitest/
 .vite-lock.json
 *.env.local
-*.env.development
+*.env.development   
 *.env.test
 *.env.production
 
