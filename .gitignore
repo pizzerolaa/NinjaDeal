@@ -48,3 +48,5 @@ price-scraper/.env
 # Docker
 docker-compose.override.yml
 docker/*.env
+
+schema.txt
