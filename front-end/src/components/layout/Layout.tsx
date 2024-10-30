@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 function Layout() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-black to-gray-900 text-white">
+        <div className="min-h-screen bg-gradient-to-b from-white to-gray-200 text-black">
             <Header />
             <main className="pt-20">
                 <Outlet />
