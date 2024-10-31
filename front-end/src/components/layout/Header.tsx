@@ -3,9 +3,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { EyeOff, User, Menu, ShoppingCart } from 'lucide-react';
+import { User, Menu, ShoppingCart } from 'lucide-react';
 import { Button } from '@components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@components/ui/sheet';
+import Logo from '../../assets/ninja-logo.svg';
 
 function Header() {
     const [isScroller, setIsScroller] = useState(false);
@@ -19,12 +20,12 @@ function Header() {
     }, []);
 
     return (
-        <header className={`fixed w-full z-10 transition-all duration-300 ${isScroller ? 'bg-gray-900/80 backdrop-blur-md' : 'bg-transparent'}`}>
+        <header className={`fixed w-full z-10 transition-all duration-300 ${isScroller ? 'bg-gray-50/20 backdrop-blur-md' : 'bg-transparent'}`}>
             <div className='container mx-auto px-4 py-4 flex items-center justify-between'>
                 <div className='flex items-center space-x-2'>
                     <Link to='/' className='flex items-center space-x-2'>
                         <motion.div initial={{ rotate: 0 }} animate={{ rotate: 360 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }}>
-                            <EyeOff className="h-8 w-8 text-black" />
+                            <img src={Logo} alt='Ninja Deal' className='h-10 w-10'/>
                         </motion.div>
                         <h1 className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-black to-red-700'>
                             Ninja Deal
@@ -39,7 +40,7 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link to='/' className='text-black hover:text-red-700 transition-colors'>
+                            <Link to='/Auth' className='text-black hover:text-red-700 transition-colors'>
                                 Categories
                             </Link>
                         </li>
