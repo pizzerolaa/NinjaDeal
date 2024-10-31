@@ -40,7 +40,7 @@ function Header() {
                             </Link>
                         </li>
                         <li>
-                            <Link to='/Auth' className='text-black hover:text-red-700 transition-colors'>
+                            <Link to='/' className='text-black hover:text-red-700 transition-colors'>
                                 Categories
                             </Link>
                         </li>
@@ -52,10 +52,12 @@ function Header() {
                     </ul>
                 </nav>
                 <div className='flex items-center space-x-4'>
-                    <Button variant='ghost' size='icon' className='text-black hover:text-red-700 transition-colors'>
-                        <User className='h-5 w-5'/>
-                        <span className='sr-only'>Login</span>
-                    </Button>
+                    <Link to='/auth' className='hidden md:block'>
+                        <Button variant='ghost' size='icon' className='text-black hover:text-red-700 transition-colors'>
+                            <User className='h-5 w-5'/>
+                            <span className='sr-only'>Login</span>
+                        </Button>
+                    </Link> 
                     <Button variant='ghost' size='icon' className='text-black hover:text-red-700 transition-colors'>
                         <ShoppingCart className='h-5 w-5'/>
                         <span className='sr-only'>Cart</span>
