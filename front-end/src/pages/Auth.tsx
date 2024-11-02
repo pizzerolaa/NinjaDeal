@@ -18,12 +18,12 @@ import { Input } from '@components/ui/input';
 import {Tabs, TabsList, TabsContent, TabsTrigger} from '@components/ui/tabs';
 import { Link } from 'react-router-dom';
 
-const loginSchema = z.object({
+const loginSchema = z.object({ //schema for the login form
     email: z.string().email({ message: 'Invalid email address.' }),
     password: z.string().min(8, { message: 'Password must be at least 8 characters long.' }),
 })
 
-const registerSchema = z.object({
+const registerSchema = z.object({ //schema for the registration form
     username: z.string().min(3, {
         message: 'Username must be at least 3 characters long.',
     }),
@@ -38,7 +38,7 @@ const registerSchema = z.object({
 });
 
 function Auth() {
-    const [activeTab, setActiveTab] = useState<'login' | 'register'>('login');
+    const [activeTab, setActiveTab] = useState<'login' | 'register'>('login'); //we define a state to keep track of the active tab
 
     //we define a form using the useForm hook from react-hook-form
     const loginForm = useForm<z.infer<typeof loginSchema>>({
